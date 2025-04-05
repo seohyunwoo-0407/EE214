@@ -25,7 +25,7 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X) # don't scailing Y value because it is not a feature
 
 # 1-4. Split the dataset into training (80%) and testing (20%) sets
-X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
 def fit_polynomial(x,y,degree): # fit polynomial model
     poly=PolynomialFeatures(degree=degree)
@@ -156,3 +156,16 @@ print(f"Validation MSE: {best_lasso_mse:.4f}")
 print("\nPolynomial Regression (No regularization):")
 print(f"Degree: {best_poly_degree}")
 print(f"Test MSE: {best_poly_mse:.4f}")
+
+'''
+=== Best Model Parameters ===
+
+Lasso Regression:
+Alpha: 0.01
+Degree: 3
+Validation MSE: 37.8192
+
+Polynomial Regression (No regularization):
+Degree: 3
+Test MSE: 47.6734
+'''
