@@ -163,9 +163,10 @@ print(f"Test MSE: {best_poly_mse:.4f}")
 Lasso Regression:
 Alpha: 0.01
 Degree: 3
-Validation MSE: 37.8192
+Validation MSE: 37.8761
 
 Polynomial Regression (No regularization):
 Degree: 3
-Test MSE: 47.6734
+Test MSE: 40.2711
+
 '''

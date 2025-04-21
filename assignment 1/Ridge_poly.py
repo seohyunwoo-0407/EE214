@@ -166,9 +166,9 @@ print(f"Test MSE: {best_poly_mse:.4f}")
 Ridge Regression:
 Alpha: 1
 Degree: 3
-Validation MSE: 42.7346
+Validation MSE: 38.9987
 
 Polynomial Regression (No regularization):
 Degree: 3
-Test MSE: 67.8808
+Test MSE: 40.2711
 '''

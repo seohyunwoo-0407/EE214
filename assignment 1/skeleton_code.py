@@ -21,7 +21,6 @@ print(data.shape)# (1030, 9) # no missing values
 # 1-3. Standardize the features
 X = data.drop(['Concrete compressive strength(MPa, megapascals) '], axis=1).values
 y = data['Concrete compressive strength(MPa, megapascals) '].values
-
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X) # don't scailing Y value because it is not a feature
 
@@ -51,6 +50,8 @@ def evaluate_model(model,poly,x,y): # evaluate polynomial model
 degrees = [1,3,5,7,9, 11]
 poly_train_errors=[]
 poly_test_errors=[]
+bias=[]
+variance=[]
 
 for degree in degrees:
     model, poly=fit_polynomial(X_train,y_train,degree)
@@ -58,6 +59,10 @@ for degree in degrees:
     y_pred_train=evaluate_model(model,poly,X_train,y_train)
     y_pred_test=evaluate_model(model,poly,X_test,y_test)
     
+    avg_pred_test=np.mean(y_pred_test,axis=0)
+    bias=np.mean((avg_pred_test-y_test)**2)
+    variance=np.mean(np.var(y_pred_test,axis=0))
+
     train_mse=mean_squared_error(y_train,y_pred_train)
     test_mse=mean_squared_error(y_test,y_pred_test)
 

@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+#랜덤으로 ab,c를 생성하여 최적의 파라미터를 찾는 코드
+
 X_train = np.load('linear_classification/X_train.npy')
 T_train = np.load('linear_classification/T_train.npy')
 X_test = np.load('linear_classification/X_test.npy')
@@ -54,3 +56,4 @@ print(f"Best Accuracy: {Pred_acc_best:.2f}")
 print(f"Best Parameters: ab={best_ab}, c={best_c}")
 print('Training Accuracy :{:.2f}%'.format(100*Pred_acc_train))
 print('Test Accuracy :{:.2f}%'.format(100*Pred_acc_test))
+
