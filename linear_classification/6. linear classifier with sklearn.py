@@ -40,3 +40,7 @@ Y_test = model.predict(x_test)
 #Print Accuracy
 print('Training Accuracy :{:.2f}%'.format(100*accuracy_score(t_train, Y_train)))
 print('Test Accuracy :{:.2f}%'.format(100*accuracy_score(t_test, Y_test)))
+
+#출력 결과
+#Training Accuracy :95.00%
+#Test Accuracy :95.00%

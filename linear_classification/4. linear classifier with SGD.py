@@ -67,3 +67,7 @@ plt.show()
 #Print Training Accuracy
 print('Training Accuracy :{:.2f}%'.format(100*Pred_acc_train))
 print('Test Accuracy :{:.2f}%'.format(100*Pred_acc_test))
+
+#출력 결과
+#Training Accuracy :93.00%
+#Test Accuracy :93.50%
