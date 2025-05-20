@@ -16,7 +16,7 @@ for idx in range(len(X_train)):
 #plt.scatter(X_train[T_train==1][:, 0].T, X_train[T_train==1][:, 1].T, color='violet', label='label : 1', s=35)
 #plt.scatter(X_train[T_train==-1][:, 0].T, X_train[T_train==-1][:, 1].T, color='aqua', label='label : -1', s=35)
 #plt.legend(loc='upper right')
-#plt.savefig('nonlinear_svm_data.png')
+#plt.savefig('nonlinear_svm_data.png')\
 #plt.show()
 
 clf_highC=svm.SVC(kernel='rbf', C=100)
@@ -35,9 +35,9 @@ plt.figure(figsize=(15,4))
 plt.subplot(121)
 plt.scatter(X_train[T_train==1][:, 0].T, X_train[T_train==1][:, 1].T, color='violet', label='label : 1', s=35)
 plt.scatter(X_train[T_train==-1][:, 0].T, X_train[T_train==-1][:, 1].T, color='aqua', label='label : -1', s=35)
+plt.contour(xx, yy, Z_lowC, colors='k', levels=[0], alpha=0.5)
 plt.grid(True)
 plt.legend(loc='upper right')
-plt.contour(xx, yy, Z_lowC, colors='k', levels=[0], alpha=0.5)
 plt.title('Low C')
 
 print(Z_lowC)
